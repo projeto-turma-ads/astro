@@ -1,14 +1,19 @@
 {
   "pages": {
-    "/page": [
+    "/(not-logged)/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/(not-logged)/login/page.js"
+    ],
+    "/(not-logged)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(not-logged)/layout.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/css-node_modules_next_font_google_target_css-node_modules_next_font_google_target_css.css",
+      "static/css/css-node_modules_react-toastify_dist_ReactToastify_css-node_modules_next_font_google_target_css.css",
       "static/css/css-src_styles_globals_css.css",
       "static/chunks/app/layout.js"
     ],
@@ -16,6 +21,27 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/error.js"
+    ],
+    "/(logged)/perfil/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(logged)/perfil/page.js"
+    ],
+    "/(logged)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(logged)/layout.js"
+    ],
+    "/(publics)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(publics)/page.js"
+    ],
+    "/(publics)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/css-node_modules_next_font_google_target_css.css",
+      "static/chunks/app/(publics)/layout.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
