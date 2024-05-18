@@ -1,19 +1,15 @@
-import getCurrentUser from "@/services/auth/customer/getCurrentUser";
 import { redirect } from "next/navigation";
 
-
-
+import getCurrentUser from "@/services/auth/customer/getCurrentUser";
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getCurrentUser()
+  const user = await getCurrentUser();
 
-  if (user) redirect('/perfil')
+  if (user) redirect("/perfil");
 
-  return (
-        <>{children}</>
-  );
+  return <div>{children}</div>;
 }

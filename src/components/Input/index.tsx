@@ -8,20 +8,25 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: "text" | "email" | "password" | "date" | "number";
   helpText?: string;
 
-  label: string
+  label: string;
 }
 
 export const Input = React.forwardRef(
   (
-    {  id, onChange, value, label, type = "text", helpText, ...props }: InputProps,
-    ref: Ref<HTMLInputElement>
+    {
+      id,
+      onChange,
+      value,
+      label,
+      type = "text",
+      helpText,
+      ...props
+    }: InputProps,
+    ref: Ref<HTMLInputElement>,
   ) => {
     return (
       <div className="relative w-full">
-           <label
-          htmlFor={id}
-          className="bg-white pr-1 pl-1 transition-all"
-        >
+        <label htmlFor={id} className="bg-white pr-1 pl-1 transition-all">
           {label}
         </label>
         <input
@@ -33,11 +38,13 @@ export const Input = React.forwardRef(
           ref={ref}
           {...props}
         />
-     
+
         <div className="h-1">
-          {helpText && <p className="text-[12px] pl-2 text-rose-600">{helpText}</p>}
+          {helpText && (
+            <p className="text-[12px] pl-2 text-rose-600">{helpText}</p>
+          )}
         </div>
       </div>
     );
-  }
+  },
 );

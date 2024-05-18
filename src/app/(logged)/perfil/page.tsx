@@ -3,16 +3,12 @@ import getCurrentUser from "@/services/auth/customer/getCurrentUser";
 
 import { redirect } from "next/navigation";
 
-export  default async function Page() {
-  const [user] = await Promise.all([await getCurrentUser()])
+export default async function Page() {
+  const [user] = await Promise.all([await getCurrentUser()]);
 
-
-
-  if(!user){
-    redirect('/login')
-    return
+  if (!user) {
+    redirect("/login");
+    return;
   }
-  return (
-   <Perfil data={user} />
-  );
+  return <Perfil data={user} />;
 }

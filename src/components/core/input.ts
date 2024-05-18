@@ -1,20 +1,20 @@
-import { tv } from 'tailwind-variants';
+import { tv } from "tailwind-variants";
 
 export const input = tv({
-  base: 'w-full px-4 border-1 py-2',
+  base: "w-full px-4 border-1 py-2",
   variants: {
     variant: {
-      default: '',
+      default: "",
     },
   },
   defaultVariants: {
     fullWidth: false,
-    variant: 'default',
+    variant: "default",
   },
   compoundVariants: [
     {
-      variant: ['default'],
-      class: 'bg-gradient-to-b',
+      variant: ["default"],
+      class: "bg-gradient-to-b",
     },
   ],
 });

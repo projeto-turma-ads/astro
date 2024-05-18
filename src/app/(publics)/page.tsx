@@ -1,124 +1,42 @@
-'use client'
-import { Code } from '@nextui-org/code'
-import { Link } from '@nextui-org/link'
-import { Snippet } from '@nextui-org/snippet'
-import { button as buttonStyles } from '@nextui-org/theme'
-import { useState } from 'react'
-
-import ContactForm from '@/components/FormContact'
-import { GithubIcon } from '@/components/icons'
-import { Keyframes } from '@/components/keyframes'
-import { title, subtitle } from '@/components/primitives'
-import Question from '@/components/Quiz'
-import { siteConfig } from '@/config/site'
-
-const question = [
-  {
-    question: 'Qual é o objeto mais brilhante no céu noturno?',
-    options: ['A Lua', 'Vênus', 'A Estrela Polar', 'Marte'],
-    optionCorrect: 'A Lua',
-  },
-  {
-    question: 'Qual é a estrela mais próxima da Terra?',
-    options: ['Alfa Centauri', 'Sirius', 'Próxima Centauri', 'Betelgeuse'],
-    optionCorrect: 'Próxima Centauri',
-  },
-  {
-    question:
-      'Que fenômeno astronômico ocorre quando a Lua se interpõe entre a Terra e o Sol?',
-    options: [
-      'Eclipse lunar',
-      'Eclipse solar',
-      'Eclipse de Lua cheia',
-      'Eclipse de Lua nova',
-    ],
-    optionCorrect: 'Eclipse solar',
-  },
-  {
-    question: 'Quantos planetas terrestres existem no sistema solar?',
-    options: ['4', '7', '3', '6'],
-    optionCorrect: '4',
-  },
-]
+"use client";
+import CountEvent from "@/components/CountEvent";
+import { Cta } from "@/components/Cta";
+import { Hero } from "@/components/Hero";
+import Quiz from "@/components/Quiz";
 
 export default function Home() {
-  const [selectedOption, setSelectedOption] = useState(null)
-
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      {/* 
-<Keyframes name="top1" delay="6" 
-						from={{ 
-							top: '0px', 
-            	opacity: 1 }} 
-						to={{ top: '600px',
-							right: '900px',
-							opacity: 0.1 }} />
-
-							<Keyframes name="top2" delay="8" 
-						from={{ 
-							top: '50px', 
-            	opacity: 1 }} 
-						to={{ top: '500px',
-							right: '1400px',
-							opacity: 0.1 }} />
-
-<Keyframes name="top3" delay="20" 
-						from={{ 
-							top: '50px', 
-            	opacity: .6,
-						rotate: '300px'
-					}} 
-						to={{ top: '800px',
-							left: '1400px',
-							opacity: 0.1 }} />
-
-			<img src="https://png.pngtree.com/png-clipart/20220109/original/pngtree-blue-purple-shooting-star-png-image_7026887.png" 
-			className="top1 absolute top-0 right-0" width={64} />
-			<img src="https://png.pngtree.com/png-clipart/20220109/original/pngtree-blue-purple-shooting-star-png-image_7026887.png" 
-			className="top2 absolute top-0 right-[500px]" width={64} />
-			<img src="https://png.pngtree.com/png-clipart/20220109/original/pngtree-blue-purple-shooting-star-png-image_7026887.png" 
-			className="top3 absolute top-0 left-0 -rotate-90 animate-pulse animate" width={64} /> */}
-
-      <div className="flex flex-col gap-2">
-        <h2>Quantos planetas terrestres existem no sistema solar?</h2>
-        <ul>
-          {['4', '7', '3', '6'].map((option, index) => (
-            <li key={index}>
-              <label className="flex gap-2">
-                <input
-                  type="radio"
-                  value={option}
-                  checked={selectedOption === option}
-                  onChange={() => setSelectedOption(option as any)}
-                />
-                {option}
-              </label>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <Question
-        handleAnswer={() => console.log('res')}
-        question={'Quantos planetas terrestres existem no sistema solar?'}
-        options={['4', '7', '3', '6']}
+    <section className="scroll-smooth focus:scroll-auto">
+      <Hero
+        title="Explorando o Cosmos: Descubra os Segredos do Universo"
+        description="Bem-vindo ao seu portal de astronomia, onde a curiosidade encontra
+      o conhecimento. Aqui, desvendamos os mistérios do universo, desde
+      as galáxias mais distantes até os detalhes fascinantes do nosso
+      próprio Sistema Solar."
+        sobText="Junte-se a nós nesta jornada estelar "
+        aboutLink="/#quiz"
+        aboutText="Saiba mais"
+        actionLink="#"
+        actionText="Cadastra-se"
       />
-
-      <div className="flex flex-col gap-4">
-        {question.map((item) => (
-          <Question
-            key={item.question}
-            handleAnswer={() => console.log('res')}
-            question={item.question}
-            options={item.options}
-          />
-        ))}
+      <Cta />
+      <div
+        className="flex flex-col gap-4 container scroll-m-20 scroll-smooth "
+        id="quiz"
+      >
+        <h1 className="text-4xl font-bold tracking-tight  sm:text-4xl">
+          Participe do Nosso Quiz Astronômico!
+        </h1>
+        <p>
+          Claro! Aqui está um texto convidando os usuários a participarem do
+          quiz: Participe do Nosso Quiz Astronômico! Você se considera um
+          entusiasta do universo? Teste seus conhecimentos sobre astronomia no
+          nosso emocionante quiz! Explore o vasto cosmos enquanto responde
+          perguntas desafiadoras sobre planetas, estrelas e muito mais.
+        </p>
+        <Quiz />
       </div>
-
-      <ContactForm />
-      <ContactForm />
-      <ContactForm />
+      <CountEvent />
     </section>
-  )
+  );
 }
