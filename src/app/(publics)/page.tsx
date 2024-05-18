@@ -3,6 +3,7 @@ import CountEvent from "@/components/CountEvent";
 import { Cta } from "@/components/Cta";
 import { Hero } from "@/components/Hero";
 import Quiz from "@/components/Quiz";
+import { Gallery } from "@/features/Home/Gallery";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         actionText="Cadastra-se"
       />
       <Cta />
+      <Gallery />
       <div
         className="flex flex-col gap-4 container scroll-m-20 scroll-smooth "
         id="quiz"
